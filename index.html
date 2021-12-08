@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptract Rune Calculation</title>
+</head>
+
+<body>
+    <header>
+        <h1>Cryptract Rune Calculation</h1>
+    </header>
+    <main>
+        <div>
+            <form action="">
+                <label for="">調整ステータス
+                    <select name="status" id="status">
+                        <option value="HP">HP</option>
+                        <option value="攻撃力">攻撃力</option>
+                        <option value="防御力">防御力</option>
+                        <option value="スピード" selected="selected">スピード</option>
+                    </select>
+                </label>
+                <label for="">目標値<input type="number" id="targetValue"></label>
+                <br>
+                <label for="">LvMax時のステータス最大値<input type="number" id="maxValue"></label>
+                <label for="">ハピネス上限値<input type="number" id="limitationValue"></label>
+                <label for="">潜在解放上昇率<input type="number" id="paRate">%</label>
+                <br>
+                <span>現在の刻印：</span>
+                <label for="">刻印①
+                    <select name="status" id="">
+                        <option value="">-</option>
+                        <option value="金">金</option>
+                        <option value="銀">銀</option>
+                        <option value="銅">銅</option>
+                    </select>
+                </label>
+                <label for="">刻印②
+                    <select name="status" id="">
+                        <option value="">-</option>
+                        <option value="金">金</option>
+                        <option value="銀">銀</option>
+                        <option value="銅">銅</option>
+                    </select>
+                </label>
+                <label for="">刻印③
+                    <select name="status" id="">
+                        <option value="">-</option>
+                        <option value="金">金</option>
+                        <option value="銀">銀</option>
+                        <option value="銅">銅</option>
+                    </select>
+                </label>
+                <label for="">刻印④
+                    <select name="status" id="">
+                        <option value="">-</option>
+                        <option value="金">金</option>
+                        <option value="銀">銀</option>
+                        <option value="銅">銅</option>
+                    </select>
+                </label>
+                <br>
+                <input type="button" value="計算" onclick="calculation()">
+            </form>
+        </div>
+        <div>
+            <div>
+                <p>同値調整は不可能です。<br>
+                    目標値以下の最近似値は、2839から刻印【金×2、銀×2、銅×0】にて3331に調整できます。</p>
+            </div>
+            <div>
+                <p>同値調整は可能です。刻印の候補は以下です。</p>
+                <table>
+                    <thead>
+                        <td>刻印①</td>
+                        <td>刻印②</td>
+                        <td>刻印③</td>
+                        <td>刻印④</td>
+                    </thead>
+                    <tr>
+                        <td>金</td>
+                        <td>銅</td>
+                        <td>銀</td>
+                        <td>金</td>
+                    </tr>
+                    <tr>
+                        <td>金</td>
+                        <td>銅</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div>
+            <p>傀儡ユニットの調整可否一覧</p>
+            <table>
+                <thead>
+                    <td>ユニット名</td>
+                    <td>可否</td>
+                    <td>金</td>
+                    <td>銀</td>
+                    <td>銅</td>
+                </thead>
+                <tr>
+                    <td>グレーテル</td>
+                    <td>〇</td>
+                    <td>3</td>
+                    <td>1</td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+<script src="script.js"></script>
+
+</html>
