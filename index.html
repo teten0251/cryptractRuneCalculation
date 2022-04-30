@@ -18,7 +18,7 @@
                 <div class="row mb-1">
                     <label for="status" class="col-md-2 col-form-label text-md-end">ステータス</label>
                     <div class="col-md-2">
-                        <select class="form-select">
+                        <select class="form-select" id="status">
                             <option value="HP">HP</option>
                             <option value="攻撃力">攻撃力</option>
                             <option value="防御力">防御力</option>
@@ -27,21 +27,21 @@
                     </div>
                     <label for="status" class="col-md-2 col-form-label text-md-end">目標値</label>
                     <div class="col-md-2">
-                        <input type="number" class="form-control">
+                        <input type="number" class="form-control" value="4260" id="target">
                     </div>
                 </div>
                 <div class="row mb-1">
-                    <label for="Lv99status" class="col-md-2 col-form-label text-md-end">Lv99時ステータス</label>
+                    <label for="Lv99status" class="col-md-2 col-form-label text-md-end">LvMax時ステータス</label>
                     <div class="col-md-2">
-                        <input type="number" class="form-control">
+                        <input type="number" class="form-control" value="2025" id="lvmax">
                     </div>
-                    <label for="Lv99status" class="col-md-2 col-form-label text-md-end">ステータス上限値</label>
+                    <label for="Lv99status" class="col-md-2 col-form-label text-md-end">最大値</label>
                     <div class="col-md-2">
-                        <input type="number" class="form-control">
+                        <input type="number" class="form-control" value="2825" id="max">
                     </div>
                     <label for="Lv99status" class="col-md-2 col-form-label text-md-end">潜在解放上昇率(%)</label>
                     <div class="col-md-2">
-                        <input type="number" class="form-control" value="0">
+                        <input type="number" class="form-control" value="30" id="rate">
                     </div>
                 </div>
                 <div class="mb-1">
