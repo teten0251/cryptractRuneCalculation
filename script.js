@@ -1,10 +1,6 @@
-function calculation() {
-    var target = document.getElementById("status").value,
-        targetValue = document.getElementById("targetValue").value,
-        maxValue = document.getElementById("maxValue").value,
-        limitationValue = document.getElementById("limitationValue").value,
-        paRate = document.getElementById("paRate").value;
-
-    // calculation
-
+function calculate() {
+    // change color
+    // var rune = document.getElementById("rune-15");
+    // rune.className = "bg-danger m-2 p-3";
 }
+
