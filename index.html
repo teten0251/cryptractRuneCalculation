@@ -16,7 +16,7 @@
         <div>
             <form>
                 <div class="row mb-1">
-                    <label for="status" class="col-md-2 col-form-label text-md-end">ステータス</label>
+                    <label for="status" class="col-md-2 col-form-label text-md-end">ステータス*</label>
                     <div class="col-md-2">
                         <select class="form-select" id="status">
                             <option value="HP">HP</option>
@@ -25,7 +25,7 @@
                             <option value="スピード" selected="selected">スピード</option>
                         </select>
                     </div>
-                    <label for="status" class="col-md-2 col-form-label text-md-end">目標値</label>
+                    <label for="status" class="col-md-2 col-form-label text-md-end">目標値*</label>
                     <div class="col-md-2">
                         <input type="number" class="form-control" value="4260" id="target">
                     </div>
@@ -49,7 +49,23 @@
                 </div>
             </form>
         </div>
-        <div class="d-flex flex-wrap align-content-between text-white mb-2">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>基礎値</th>
+                    <th>刻印</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody id="resultList">
+                <tr>
+                    <td>-</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- <div class="d-flex flex-wrap align-content-between text-white mb-2">
             <div class="bg-secondary m-2 p-3" id="rune-0">調整不可</div>
             <div class="bg-secondary m-2 p-3" id="rune-1">刻印なし</div>
             <div class="bg-secondary m-2 p-3" id="rune-2">1-0-0-0</div>
@@ -85,10 +101,10 @@
             <div class="bg-secondary m-2 p-3" id="rune-32">3-3-3-1</div>
             <div class="bg-secondary m-2 p-3" id="rune-33">3-3-3-2</div>
             <div class="bg-secondary m-2 p-3" id="rune-34">3-3-3-3</div>
-        </div>
+        </div> -->
         <div class="accordion-item">
             <h3 class="accordion-header">
-                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#d1">傀儡キャラ</button>
+                <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#d1">調整可能な傀儡キャラ</button>
             </h3>
             <div class="accordion-collapse collapse" data-bs-parent="#acd1" id="d1">
                 <div class="accordion-body">
