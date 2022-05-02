@@ -68,6 +68,11 @@ const MAPPING = {
     33: ["3-3-3-3", "金刻印×4"]
 }
 
+let script = document.createElement("script");
+script.type = "text/javascript";
+script.src = "./puppetCharacter.js";
+document.body.appendChild(script);
+
 function calculate() {
     const status = document.getElementById("status").value,
         target = document.getElementById("target").value,
@@ -183,4 +188,21 @@ function getCalculationList(status, target, lvmax, max, rate) {
         }
     });
     return result;
+}
+
+function isPuppetSearcher() {
+    let isChecked = document.getElementById("puppetSearcher").checked;
+    if (isChecked) {
+        let status = document.getElementById("status");
+        status.value = "スピード";
+        status.disabled = true;
+        document.getElementById("lvmax").disabled = true;
+        document.getElementById("max").disabled = true;
+        document.getElementById("rate").disabled = true;
+    } else {
+        document.getElementById("status").disabled = false;
+        document.getElementById("lvmax").disabled = false;
+        document.getElementById("max").disabled = false;
+        document.getElementById("rate").disabled = false;
+    }
 }
