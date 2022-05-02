@@ -206,3 +206,13 @@ function isPuppetSearcher() {
         document.getElementById("rate").disabled = false;
     }
 }
+
+function showData(event) {
+    const targetId = event.target.id,
+        puppetCharacters = window.PUPPET_CHARACTER,
+        targetCharacter = puppetCharacters.filter(puppetCharacter => puppetCharacter.id === targetId)[0];
+
+    document.getElementById("lvmax").value = targetCharacter.lvmax;
+    document.getElementById("max").value = targetCharacter.max;
+    document.getElementById("rate").value = targetCharacter.rate;
+}
