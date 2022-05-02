@@ -33,39 +33,39 @@ const SPEED_RATE = {
 
 const MAPPING = {
     0: ["0-0-0-0", "刻印なし"],
-    1: ["1-0-0-0", "銅刻印１つ"],
-    2: ["1-1-0-0", ""],
-    3: ["1-1-1-0", ""],
-    4: ["1-1-1-1", ""],
-    5: ["2-0-0-0", ""],
-    6: ["2-1-0-0", ""],
-    7: ["2-1-1-0", ""],
-    8: ["2-1-1-1", ""],
-    9: ["2-2-0-0", ""],
-    10: ["2-2-1-0", ""],
-    11: ["2-2-1-1", ""],
-    12: ["2-2-2-0", ""],
-    13: ["2-2-2-1", ""],
-    14: ["2-2-2-2", ""],
-    15: ["3-0-0-0", ""],
-    16: ["3-1-0-0", ""],
-    17: ["3-1-1-0", ""],
-    18: ["3-1-1-1", ""],
-    19: ["3-2-0-0", ""],
-    20: ["3-2-1-0", ""],
-    21: ["3-2-2-0", ""],
-    22: ["3-2-2-1", ""],
-    23: ["3-2-2-2", ""],
-    24: ["3-3-0-0", ""],
-    25: ["3-3-1-0", ""],
-    26: ["3-3-1-1", ""],
-    27: ["3-3-2-0", ""],
-    28: ["3-3-2-1", ""],
-    29: ["3-3-2-2", ""],
-    30: ["3-3-3-0", ""],
-    31: ["3-3-3-1", ""],
-    32: ["3-3-3-2", ""],
-    33: ["3-3-3-3", ""]
+    1: ["1-0-0-0", "銅刻印×1"],
+    2: ["1-1-0-0", "銅刻印×2"],
+    3: ["1-1-1-0", "銅刻印×3"],
+    4: ["1-1-1-1", "銅刻印×4"],
+    5: ["2-0-0-0", "銀刻印×1"],
+    6: ["2-1-0-0", "銀刻印×1、銅刻印×1"],
+    7: ["2-1-1-0", "銀刻印×1、銅刻印×2"],
+    8: ["2-1-1-1", "銀刻印×1、銅刻印×3"],
+    9: ["2-2-0-0", "銀刻印×2"],
+    10: ["2-2-1-0", "銀刻印×2、銅刻印×1"],
+    11: ["2-2-1-1", "銀刻印×2、銅刻印×2"],
+    12: ["2-2-2-0", "銀刻印×3"],
+    13: ["2-2-2-1", "銀刻印×3、銅刻印×1"],
+    14: ["2-2-2-2", "銀刻印×4"],
+    15: ["3-0-0-0", "金刻印×1"],
+    16: ["3-1-0-0", "金刻印×1、銅刻印×1"],
+    17: ["3-1-1-0", "金刻印×1、銅刻印×2"],
+    18: ["3-1-1-1", "金刻印×1、銅刻印×3"],
+    19: ["3-2-0-0", "金刻印×1、銀刻印×1"],
+    20: ["3-2-1-0", "金刻印×1、銀刻印×1、銅刻印×1"],
+    21: ["3-2-2-0", "金刻印×1、銀刻印×2"],
+    22: ["3-2-2-1", "金刻印×1、銀刻印×3"],
+    23: ["3-2-2-2", "金刻印×1、銀刻印×3"],
+    24: ["3-3-0-0", "金刻印×2"],
+    25: ["3-3-1-0", "金刻印×2、銅刻印×1"],
+    26: ["3-3-1-1", "金刻印×2、銅刻印×2"],
+    27: ["3-3-2-0", "金刻印×2、銀刻印×1"],
+    28: ["3-3-2-1", "金刻印×2、銀刻印×1、銅刻印×1"],
+    29: ["3-3-2-2", "金刻印×2、銀刻印×2"],
+    30: ["3-3-3-0", "金刻印×3"],
+    31: ["3-3-3-1", "金刻印×3、銅刻印×1"],
+    32: ["3-3-3-2", "金刻印×3、銀刻印×1"],
+    33: ["3-3-3-3", "金刻印×4"]
 }
 
 function calculate() {
@@ -88,34 +88,33 @@ function calculate() {
     tbody.innerHTML = "";
 
     const resultList = getCalculationList(status, Number(target), Number(lvmax), Number(max), Number(rate));
-    if (!resultList) {
+    if (resultList.length === 0) {
         let tr = document.createElement("tr");
+        let description = document.createElement("td");
         let base = document.createElement("td");
         let rune = document.createElement("td");
-        let description = document.createElement("td");
+        tr.appendChild(description);
         tr.appendChild(base);
         tr.appendChild(rune);
-        tr.appendChild(td3);
-        tbody.appendChild(description);
-        base.innerText = "調整不可";
+        tbody.appendChild(tr);
+        description.innerText = "調整不可";
+        base.innerText = "-";
+        rune.innerText = "-";
     } else {
         for (let n = 0; n < resultList.length; n++) {
             let tr = document.createElement("tr");
+            let description = document.createElement("td");
             let base = document.createElement("td");
             let rune = document.createElement("td");
-            let description = document.createElement("td");
+            tr.appendChild(description);
             tr.appendChild(base);
             tr.appendChild(rune);
-            tr.appendChild(description);
             tbody.appendChild(tr);
+            description.innerText = "ステータス" + resultList[n].base + "に" + resultList[n].description + "にて調整可能";
             base.innerText = resultList[n].base;
             rune.innerText = resultList[n].rune;
-            description.innerText = resultList[n].description;
         }
     }
-
-    const n = 1;
-
 }
 
 function getCalculationList(status, target, lvmax, max, rate) {
