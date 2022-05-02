@@ -80,34 +80,71 @@ function calculate() {
         max = document.getElementById("max").value;
     let rate = document.getElementById("rate").value;
 
-    if (!status || !target || !lvmax || !max) {
+    if (!target) {
+        document.getElementById("target").style.backgroundColor = "pink";
+        document.getElementById("target").focus();
         return;
     }
+    document.getElementById("target").style.backgroundColor = "white";
 
     if (!rate) {
         rate = 0;
     }
 
-    // init
-    let tbody = document.getElementById("resultList");
-    tbody.innerHTML = "";
+    let puppetDivs = document.querySelectorAll(".bg-danger");
+    puppetDivs.forEach(puppetDiv => { puppetDiv.className = "bg-secondary m-2 p-3" });
 
-    const resultList = getCalculationList(status, Number(target), Number(lvmax), Number(max), Number(rate));
-    if (resultList.length === 0) {
-        let tr = document.createElement("tr");
-        let description = document.createElement("td");
-        tr.appendChild(description);
-        tbody.appendChild(tr);
-        description.innerText = "調整不可";
-    } else {
-        for (let n = 0; n < resultList.length; n++) {
+    const isChecked = document.getElementById("puppetSearcher").checked;
+    if (!isChecked) {
+        // init
+        let tbody = document.getElementById("resultList");
+        tbody.innerHTML = "";
+
+        // get calculation result
+        const resultList = getCalculationList(status, Number(target), Number(lvmax), Number(max), Number(rate));
+        if (resultList.length === 0) {
             let tr = document.createElement("tr");
             let description = document.createElement("td");
             tr.appendChild(description);
             tbody.appendChild(tr);
-            description.innerText = "ステータス" + resultList[n].base + "に" + resultList[n].description + "で調整可能";
+            description.innerText = "調整不可";
+        } else {
+            for (let n = 0; n < resultList.length; n++) {
+                let tr = document.createElement("tr");
+                let description = document.createElement("td");
+                tr.appendChild(description);
+                tbody.appendChild(tr);
+                description.innerText = "ステータス" + resultList[n].base + "に" + resultList[n].description + "で調整可能";
+            }
         }
+    } else {
+        let tbody = document.getElementById("resultList");
+        tbody.innerHTML = "";
+        let tr = document.createElement("tr");
+        let description = document.createElement("td");
+        tr.appendChild(description);
+        tbody.appendChild(tr);
+        description.innerText = "-";
     }
+
+    // get puppet result
+    if (status === "スピード") {
+        const puppetCharacters = window.PUPPET_CHARACTER;
+
+        puppetCharacters.forEach(puppetCharacter => {
+            let puppetResult = getCalculationList(status,
+                Number(target),
+                Number(puppetCharacter.lvmax),
+                Number(puppetCharacter.max),
+                Number(puppetCharacter.rate));
+            if (puppetResult.length !== 0) {
+                let newClassName = document.getElementById(puppetCharacter.id).className.replace("bg-secondary", "bg-danger");
+                document.getElementById(puppetCharacter.id).className = newClassName;
+            }
+        })
+    }
+
+
 }
 
 function getCalculationList(status, target, lvmax, max, rate) {
@@ -191,7 +228,7 @@ function getCalculationList(status, target, lvmax, max, rate) {
 }
 
 function isPuppetSearcher() {
-    let isChecked = document.getElementById("puppetSearcher").checked;
+    const isChecked = document.getElementById("puppetSearcher").checked;
     if (isChecked) {
         let status = document.getElementById("status");
         status.value = "スピード";
@@ -199,14 +236,16 @@ function isPuppetSearcher() {
         document.getElementById("lvmax").disabled = true;
         document.getElementById("max").disabled = true;
         document.getElementById("rate").disabled = true;
-        document.getElementById("lvmax").value = 0;
-        document.getElementById("max").value = 0;
-        document.getElementById("rate").value = 0;
+        document.getElementById("lvmax").value = "";
+        document.getElementById("max").value = "";
+        document.getElementById("rate").value = "";
+        document.getElementById("d1").className = "accordion-collapse collapse show";
     } else {
         document.getElementById("status").disabled = false;
         document.getElementById("lvmax").disabled = false;
         document.getElementById("max").disabled = false;
         document.getElementById("rate").disabled = false;
+        document.getElementById("d1").className = "accordion-collapse collapse";
     }
 }
 
