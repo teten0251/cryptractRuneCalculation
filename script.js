@@ -199,6 +199,9 @@ function isPuppetSearcher() {
         document.getElementById("lvmax").disabled = true;
         document.getElementById("max").disabled = true;
         document.getElementById("rate").disabled = true;
+        document.getElementById("lvmax").value = 0;
+        document.getElementById("max").value = 0;
+        document.getElementById("rate").value = 0;
     } else {
         document.getElementById("status").disabled = false;
         document.getElementById("lvmax").disabled = false;
@@ -212,7 +215,12 @@ function showData(event) {
         puppetCharacters = window.PUPPET_CHARACTER,
         targetCharacter = puppetCharacters.filter(puppetCharacter => puppetCharacter.id === targetId)[0];
 
+    document.getElementById("puppetSearcher").checked = false;
     document.getElementById("lvmax").value = targetCharacter.lvmax;
     document.getElementById("max").value = targetCharacter.max;
     document.getElementById("rate").value = targetCharacter.rate;
+    document.getElementById("status").disabled = false;
+    document.getElementById("lvmax").disabled = false;
+    document.getElementById("max").disabled = false;
+    document.getElementById("rate").disabled = false;
 }
