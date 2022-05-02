@@ -91,28 +91,16 @@ function calculate() {
     if (resultList.length === 0) {
         let tr = document.createElement("tr");
         let description = document.createElement("td");
-        let base = document.createElement("td");
-        let rune = document.createElement("td");
         tr.appendChild(description);
-        tr.appendChild(base);
-        tr.appendChild(rune);
         tbody.appendChild(tr);
         description.innerText = "調整不可";
-        base.innerText = "-";
-        rune.innerText = "-";
     } else {
         for (let n = 0; n < resultList.length; n++) {
             let tr = document.createElement("tr");
             let description = document.createElement("td");
-            let base = document.createElement("td");
-            let rune = document.createElement("td");
             tr.appendChild(description);
-            tr.appendChild(base);
-            tr.appendChild(rune);
             tbody.appendChild(tr);
-            description.innerText = "ステータス" + resultList[n].base + "に" + resultList[n].description + "にて調整可能";
-            base.innerText = resultList[n].base;
-            rune.innerText = resultList[n].rune;
+            description.innerText = "ステータス" + resultList[n].base + "に" + resultList[n].description + "で調整可能";
         }
     }
 }
