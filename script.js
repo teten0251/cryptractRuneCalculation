@@ -150,9 +150,21 @@ function calculate() {
 function getCalculationList(status, target, lvmax, max, rate) {
     let list = {};
     let i = 0;
+    // add keys using increment
     while (lvmax + MAPPING_DIFF[status] * i <= max) {
         list[lvmax + MAPPING_DIFF[status] * i] = [];
         i++;
+    }
+    // add keys using decrement
+    let j = 0;
+    while (max - MAPPING_DIFF[status] * j >= lvmax) {
+        let decrementKey = max - MAPPING_DIFF[status] * j;
+        if (decrementKey in list) {
+            break;
+        } else {
+            list[decrementKey] = [];
+            j++;
+        }
     }
 
     let runeRate = "";
