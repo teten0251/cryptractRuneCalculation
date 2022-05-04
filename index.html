@@ -24,17 +24,20 @@
             </div>
             <div class="offcanvas-body">
                 <div>
-                    <p>・ステータス、目標値：刻印調整したいステータスと、調整したい値。</p>
-                    <p>・LvMax時ステータス、最大値：ゲーム内の以下の画面の赤枠、"最大値"は青枠の調整したいステータスの値を入力します。</p>
+                    <p>・ステータス、目標値：<br>
+                        刻印調整したいステータスと、調整したい値。</p>
+                    <p>・LvMax時ステータス、最大値：<br>
+                        ゲーム内の以下の画面の赤枠、"最大値"は青枠の調整したいステータスの値を入力します。</p>
                     <img src="./img/status.png" class="img-fluid">
-                    <p>・潜在解放上昇率：潜在解放済みのユニットを調整する場合に、潜在解放で上昇したステータスの割合の合計を入力します。
+                    <p>・潜在解放上昇率：<br>
+                        潜在解放済みのユニットを調整する場合に、潜在解放で上昇したステータスの割合の合計を入力します。
                         潜在解放済みでない場合は未入力か"0"を入力します。</p>
                     <p>例えば、フル解放の闇進化バロゲイドのスピードは"30"になります。</p>
                     <img src="./img/pa.png" class="img-fluid">
                 </div>
             </div>
         </div>
-        <div>
+        <div class="mt-2">
             <form>
                 <div class="form-check form-switch col-md-4">
                     <input type="checkbox" class="form-check-input" id="puppetSearcher" onchange="isPuppetSearcher()">
@@ -92,57 +95,67 @@
                 </h3>
                 <div class="accordion-collapse collapse" data-bs-parent="#acd1" id="d1">
                     <div class="accordion-body">
-                        <div class="d-flex flex-wrap align-content-between text-white">
-                            <div class="bg-secondary m-2 p-3" id="闇進化イロハ" onclick="showData(event)">闇進化イロハ</div>
-                            <div class="bg-secondary m-2 p-3" id="闇契約イロハ" onclick="showData(event)">闇契約イロハ</div>
-                            <div class="bg-secondary m-2 p-3" id="闇進化ヴァイパー" onclick="showData(event)">闇進化ヴァイパー</div>
-                            <div class="bg-secondary m-2 p-3" id="闇契約ヴァイパー" onclick="showData(event)">闇契約ヴァイパー</div>
-                            <div class="bg-secondary m-2 p-3" id="水進化ヴァイパー" onclick="showData(event)">水進化ヴァイパー</div>
-                            <div class="bg-secondary m-2 p-3" id="水契約ヴァイパー" onclick="showData(event)">水契約ヴァイパー</div>
-                            <div class="bg-secondary m-2 p-3" id="闇進化ヴァネイト" onclick="showData(event)">闇進化ヴァネイト</div>
-                            <div class="bg-secondary m-2 p-3" id="闇契約ヴァネイト" onclick="showData(event)">闇契約ヴァネイト</div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]樹進化オペラ" onclick="showData(event)">[解放]樹進化オペラ</div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]樹契約オペラ" onclick="showData(event)">[解放]樹契約オペラ</div>
-                            <div class="bg-secondary m-2 p-3" id="樹進化オペラ" onclick="showData(event)">樹進化オペラ</div>
-                            <div class="bg-secondary m-2 p-3" id="樹契約オペラ" onclick="showData(event)">樹契約オペラ</div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]闇進化オペラ" onclick="showData(event)">[解放]闇進化オペラ</div>
-                            <div class="bg-secondary m-2 p-3" id="闇進化オペラ" onclick="showData(event)">闇進化オペラ</div>
-                            <div class="bg-secondary m-2 p-3" id="火契約2グレーテル" onclick="showData(event)">火契約2グレーテル</div>
-                            <div class="bg-secondary m-2 p-3" id="闇進化サロメ" onclick="showData(event)">闇進化サロメ</div>
-                            <div class="bg-secondary m-2 p-3" id="闇契約サロメ" onclick="showData(event)">闇契約サロメ</div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]樹進化ジェペート" onclick="showData(event)">[解放]樹進化ジェペート
-                            </div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]樹契約ジェペート" onclick="showData(event)">[解放]樹契約ジェペート
-                            </div>
-                            <div class="bg-secondary m-2 p-3" id="樹進化ジェペート" onclick="showData(event)">樹進化ジェペート</div>
-                            <div class="bg-secondary m-2 p-3" id="樹契約ジェペート" onclick="showData(event)">樹契約ジェペート</div>
-                            <div class="bg-secondary m-2 p-3" id="樹進化スイレン" onclick="showData(event)">樹進化スイレン</div>
-                            <div class="bg-secondary m-2 p-3" id="樹契約スイレン" onclick="showData(event)">樹契約スイレン</div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]水進化スイレン" onclick="showData(event)">[解放]水進化スイレン
-                            </div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]水契約スイレン" onclick="showData(event)">[解放]水契約スイレン
-                            </div>
-                            <div class="bg-secondary m-2 p-3" id="水進化スイレン" onclick="showData(event)">水進化スイレン</div>
-                            <div class="bg-secondary m-2 p-3" id="水契約スイレン" onclick="showData(event)">水契約スイレン</div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]光進化セツナ" onclick="showData(event)">[解放]光進化セツナ</div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]光契約セツナ" onclick="showData(event)">[解放]光契約セツナ</div>
-                            <div class="bg-secondary m-2 p-3" id="光進化セツナ" onclick="showData(event)">光進化セツナ</div>
-                            <div class="bg-secondary m-2 p-3" id="光契約セツナ" onclick="showData(event)">光契約セツナ</div>
-                            <div class="bg-secondary m-2 p-3" id="闇進化ツァトーレ" onclick="showData(event)">闇進化ツァトーレ</div>
-                            <div class="bg-secondary m-2 p-3" id="闇契約ツァトーレ" onclick="showData(event)">闇契約ツァトーレ</div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]水進化トワネロ" onclick="showData(event)">[解放]水進化トワネロ
-                            </div>
-                            <div class="bg-secondary m-2 p-3" id="水進化トワネロ" onclick="showData(event)">水進化トワネロ</div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]火進化ナユタ" onclick="showData(event)">[解放]火進化ナユタ</div>
-                            <div class="bg-secondary m-2 p-3" id="[解放]火契約ナユタ" onclick="showData(event)">[解放]火契約ナユタ</div>
-                            <div class="bg-secondary m-2 p-3" id="火契約2ナユタ" onclick="showData(event)">火契約2ナユタ</div>
-                            <div class="bg-secondary m-2 p-3" id="火進化ナユタ" onclick="showData(event)">火進化ナユタ</div>
-                            <div class="bg-secondary m-2 p-3" id="火契約ナユタ" onclick="showData(event)">火契約ナユタ</div>
-                            <div class="bg-secondary m-2 p-3" id="光進化ハーメルン" onclick="showData(event)">光進化ハーメルン</div>
-                            <div class="bg-secondary m-2 p-3" id="光契約ハーメルン" onclick="showData(event)">光契約ハーメルン</div>
-                            <div class="bg-secondary m-2 p-3" id="光進化パシタラネア" onclick="showData(event)">光進化パシタラネア</div>
-                            <div class="bg-secondary m-2 p-3" id="光契約パシタラネア" onclick="showData(event)">光契約パシタラネア</div>
-                            <div class="bg-secondary m-2 p-3" id="闇契約ハトホル" onclick="showData(event)">闇契約ハトホル</div>
+                        <div class="d-flex flex-wrap align-content-between text-white d-grid gap-3">
+                            <button type="button" id="闇進化イロハ" class="btn btn-secondary puppet-card">闇進化イロハ</button>
+                            <button type="button" id="闇契約イロハ" class="btn btn-secondary puppet-card">闇契約イロハ</button>
+                            <button type="button" id="闇進化ヴァイパー" class="btn btn-secondary puppet-card">闇進化ヴァイパー</button>
+                            <button type="button" id="闇契約ヴァイパー" class="btn btn-secondary puppet-card">闇契約ヴァイパー</button>
+                            <button type="button" id="水進化ヴァイパー" class="btn btn-secondary puppet-card">水進化ヴァイパー</button>
+                            <button type="button" id="水契約ヴァイパー" class="btn btn-secondary puppet-card">水契約ヴァイパー</button>
+                            <button type="button" id="闇進化ヴァネイト" class="btn btn-secondary puppet-card">闇進化ヴァネイト</button>
+                            <button type="button" id="闇契約ヴァネイト" class="btn btn-secondary puppet-card">闇契約ヴァネイト</button>
+                            <button type="button" id="[解放]樹進化オペラ"
+                                class="btn btn-secondary puppet-card">[解放]樹進化オペラ</button>
+                            <button type="button" id="[解放]樹契約オペラ"
+                                class="btn btn-secondary puppet-card">[解放]樹契約オペラ</button>
+                            <button type="button" id="樹進化オペラ" class="btn btn-secondary puppet-card">樹進化オペラ</button>
+                            <button type="button" id="樹契約オペラ" class="btn btn-secondary puppet-card">樹契約オペラ</button>
+                            <button type="button" id="[解放]闇進化オペラ"
+                                class="btn btn-secondary puppet-card">[解放]闇進化オペラ</button>
+                            <button type="button" id="闇進化オペラ" class="btn btn-secondary puppet-card">闇進化オペラ</button>
+                            <button type="button" id="火契約2グレーテル"
+                                class="btn btn-secondary puppet-card">火契約2グレーテル</button>
+                            <button type="button" id="闇進化サロメ" class="btn btn-secondary puppet-card">闇進化サロメ</button>
+                            <button type="button" id="闇契約サロメ" class="btn btn-secondary puppet-card">闇契約サロメ</button>
+                            <button type="button" id="[解放]樹進化ジェペート"
+                                class="btn btn-secondary puppet-card">[解放]樹進化ジェペート</button>
+                            <button type="button" id="[解放]樹契約ジェペート"
+                                class="btn btn-secondary puppet-card">[解放]樹契約ジェペート</button>
+                            <button type="button" id="樹進化ジェペート" class="btn btn-secondary puppet-card">樹進化ジェペート</button>
+                            <button type="button" id="樹契約ジェペート" class="btn btn-secondary puppet-card">樹契約ジェペート</button>
+                            <button type="button" id="樹進化スイレン" class="btn btn-secondary puppet-card">樹進化スイレン</button>
+                            <button type="button" id="樹契約スイレン" class="btn btn-secondary puppet-card">樹契約スイレン</button>
+                            <button type="button" id="[解放]水進化スイレン"
+                                class="btn btn-secondary puppet-card">[解放]水進化スイレン</button>
+                            <button type="button" id="[解放]水契約スイレン"
+                                class="btn btn-secondary puppet-card">[解放]水契約スイレン</button>
+                            <button type="button" id="水進化スイレン" class="btn btn-secondary puppet-card">水進化スイレン</button>
+                            <button type="button" id="水契約スイレン" class="btn btn-secondary puppet-card">水契約スイレン</button>
+                            <button type="button" id="[解放]光進化セツナ"
+                                class="btn btn-secondary puppet-card">[解放]光進化セツナ</button>
+                            <button type="button" id="[解放]光契約セツナ"
+                                class="btn btn-secondary puppet-card">[解放]光契約セツナ</button>
+                            <button type="button" id="光進化セツナ" class="btn btn-secondary puppet-card">光進化セツナ</button>
+                            <button type="button" id="光契約セツナ" class="btn btn-secondary puppet-card">光契約セツナ</button>
+                            <button type="button" id="闇進化ツァトーレ" class="btn btn-secondary puppet-card">闇進化ツァトーレ</button>
+                            <button type="button" id="闇契約ツァトーレ" class="btn btn-secondary puppet-card">闇契約ツァトーレ</button>
+                            <button type="button" id="[解放]水進化トワネロ"
+                                class="btn btn-secondary puppet-card">[解放]水進化トワネロ</button>
+                            <button type="button" id="水進化トワネロ" class="btn btn-secondary puppet-card">水進化トワネロ</button>
+                            <button type="button" id="[解放]火進化ナユタ"
+                                class="btn btn-secondary puppet-card">[解放]火進化ナユタ</button>
+                            <button type="button" id="[解放]火契約ナユタ"
+                                class="btn btn-secondary puppet-card">[解放]火契約ナユタ</button>
+                            <button type="button" id="火契約2ナユタ" class="btn btn-secondary puppet-card">火契約2ナユタ</button>
+                            <button type="button" id="火進化ナユタ" class="btn btn-secondary puppet-card">火進化ナユタ</button>
+                            <button type="button" id="火契約ナユタ" class="btn btn-secondary puppet-card">火契約ナユタ</button>
+                            <button type="button" id="光進化ハーメルン" class="btn btn-secondary puppet-card">光進化ハーメルン</button>
+                            <button type="button" id="光契約ハーメルン" class="btn btn-secondary puppet-card">光契約ハーメルン</button>
+                            <button type="button" id="光進化パシタラネア"
+                                class="btn btn-secondary puppet-card">光進化パシタラネア</button>
+                            <button type="button" id="光契約パシタラネア"
+                                class="btn btn-secondary puppet-card">光契約パシタラネア</button>
+                            <button type="button" id="闇契約ハトホル" class="btn btn-secondary puppet-card">闇契約ハトホル</button>
                         </div>
                     </div>
                 </div>

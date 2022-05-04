@@ -73,6 +73,11 @@ script.type = "text/javascript";
 script.src = "./puppetCharacter.js";
 document.body.appendChild(script);
 
+let puppetCards = document.querySelectorAll(".puppet-card");
+puppetCards.forEach(puppetCard => {
+    puppetCard.addEventListener("click", event => showData(event));
+});
+
 function calculate() {
     const status = document.getElementById("status").value,
         target = document.getElementById("target").value,
@@ -91,8 +96,11 @@ function calculate() {
         rate = 0;
     }
 
-    let puppetDivs = document.querySelectorAll(".bg-danger");
-    puppetDivs.forEach(puppetDiv => { puppetDiv.className = "bg-secondary m-2 p-3" });
+    let puppetCards = document.querySelectorAll(".puppet-card");
+    puppetCards.forEach(puppetCard => {
+        const newClassName = puppetCard.className.replace("btn-danger", "btn-secondary");
+        puppetCard.className = newClassName;
+    });
 
     const isChecked = document.getElementById("puppetSearcher").checked;
     if (!isChecked) {
@@ -138,7 +146,7 @@ function calculate() {
                 Number(puppetCharacter.max),
                 Number(puppetCharacter.rate));
             if (puppetResult.length !== 0) {
-                let newClassName = document.getElementById(puppetCharacter.id).className.replace("bg-secondary", "bg-danger");
+                const newClassName = document.getElementById(puppetCharacter.id).className.replace("btn-secondary", "btn-danger");
                 document.getElementById(puppetCharacter.id).className = newClassName;
             }
         })
