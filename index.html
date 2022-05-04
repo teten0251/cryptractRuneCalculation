@@ -15,7 +15,25 @@
 
 <body>
     <div class="container">
-        <h1 class="my-4">刻印計算+</h1>
+        <h1 class="mt-4 mb-1">刻印計算+</h1>
+        <a href="#instruction" data-bs-toggle="offcanvas">入力欄の説明</a>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="instruction">
+            <div class="offcanvas-header">
+                <h2 class="offcanvas-title">入力欄の説明</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div>
+                    <p>・ステータス、目標値：刻印調整したいステータスと、調整したい値。</p>
+                    <p>・LvMax時ステータス、最大値：ゲーム内の以下の画面の赤枠、"最大値"は青枠の調整したいステータスの値を入力します。</p>
+                    <img src="./img/status.png" class="img-fluid">
+                    <p>・潜在解放上昇率：潜在解放済みのユニットを調整する場合に、潜在解放で上昇したステータスの割合の合計を入力します。
+                        潜在解放済みでない場合は未入力か"0"を入力します。</p>
+                    <p>例えば、フル解放の闇進化バロゲイドのスピードは"30"になります。</p>
+                    <img src="./img/pa.png" class="img-fluid">
+                </div>
+            </div>
+        </div>
         <div>
             <form>
                 <div class="form-check form-switch col-md-4">
