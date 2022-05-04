@@ -182,7 +182,7 @@ function getCalculationResults(status, target, lvmax, max, rate) {
         case "攻撃力":
             runeRate = ATTACK_RATE;
             break;
-        case "守備力":
+        case "防御力":
             runeRate = DEFENSE_RATE;
             break;
         case "スピード":
