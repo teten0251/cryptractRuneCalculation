@@ -91,7 +91,7 @@ function calculate() {
         document.getElementById("target").focus();
         return;
     }
-    document.getElementById("target").style.backgroundColor = "white";
+    document.getElementById("target").style.backgroundColor = "transparent";
 
     if (!rate) {
         rate = 0;
@@ -194,7 +194,6 @@ function getCalculationResults(status, target, lvmax, max, rate) {
         bronze = runeRate["bronze"] / 100,
         pa = rate / 100 + 1;
 
-    let n = 0;
     Object.keys(dict).forEach(key => {
         MAPPING.forEach(unit => {
             dict[key].push(Math.round(key * (1 + gold * unit[1]["gold"] + silver * unit[1]["silver"] + bronze * unit[1]["bronze"]) * pa));
