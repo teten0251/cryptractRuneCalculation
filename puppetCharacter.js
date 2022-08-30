@@ -274,5 +274,11 @@ window.PUPPET_CHARACTER = [
     lvmax: 2596,
     max: 3266,
     rate: 0
+  },
+  {
+    id: '水進化カラステング',
+    lvmax: 2591,
+    max: 3101,
+    rate: 0
   }
 ]
